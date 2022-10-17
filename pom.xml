@@ -75,7 +75,35 @@
 </dependency>
 </dependencies>
 <build>
+  <finalName>${project.artifactId}-${project.version}</finalName>
+  <sourceDirectory>src</sourceDirectory>
+  <testSourceDirectory>test</testSourceDirectory>
+  <resources>
+    <resource>
+      <directory>src</directory>
+      <excludes>
+        <exclude>**/*.java</exclude>
+      </excludes>
+    </resource>
+  </resources>
+  <testResources>
+    <testResource>
+      <directory>test</directory>
+      <excludes>
+        <exclude>**/*.java</exclude>
+      </excludes>
+    </testResource>
+  </testResources>
  <plugins>
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>${maven-compiler-plugin.version}</version>
+      <configuration>
+        <source>${maven.compiler.source}</source>
+        <target>${maven.compiler.target}</target>
+      </configuration>
+    </plugin> 
  <plugin>
  <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
@@ -141,6 +169,7 @@
                     </execution>
                 </executions>
             </plugin>
+   
  </plugins>
  </build>
 </project>
