@@ -74,26 +74,12 @@
     <version>20160810</version>
 </dependency>
 </dependencies>
-<build>
-  <finalName>${project.artifactId}-${project.version}</finalName>
-  <sourceDirectory>src</sourceDirectory>
-  <testSourceDirectory>test</testSourceDirectory>
-  <resources>
-    <resource>
-      <directory>src</directory>
-      <excludes>
-        <exclude>**/*.java</exclude>
-      </excludes>
-    </resource>
-  </resources>
-  <testResources>
-    <testResource>
-      <directory>test</directory>
-      <excludes>
-        <exclude>**/*.java</exclude>
-      </excludes>
-    </testResource>
-  </testResources>
+  <build>
+    <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+    <scriptSourceDirectory>${basedir}/src/main/scripts</scriptSourceDirectory>
+    <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+    <outputDirectory>${basedir}/target/classes</outputDirectory>
+    <testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory>
  <plugins>
   <plugin>
       <groupId>org.apache.maven.plugins</groupId>
